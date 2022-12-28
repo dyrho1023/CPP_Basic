@@ -22,12 +22,12 @@ namespace math
     }
 }
 
-// Subject_English
-namespace english
+// Subject_Korean
+namespace korean
 {
-    void EnglishScore()
+    void KoreanScore() 
     {
-        std::cout << "English Score" << std::endl;
+        std::cout << "Korean Score " << std::endl;
     }
 
     int CommonInfo()
@@ -35,11 +35,27 @@ namespace english
         return 0;
     }
 }
-// 1) 특정 함수만 using 선언
+// Subject_English
+namespace english
+{
+    void EnglishScore()
+    {
+        std::cout << "English A Score" << std::endl;
+    }
+
+    int CommonInfo()
+    {
+        std::cout << "Class A" << std::endl;
+        return 0;
+    }
+}
+
+// 1) 특정 함수만 using 선언 (Delcaration)
 using math::MathScore;
 
-// 2) namespace 전체를 using 선언
+// 2) namespace 전체를 using 선언 (Directive) - 현업에서는 사용 금지
 using namespace english;
+using namespace korean;
 
 int main()
 {
@@ -49,6 +65,12 @@ int main()
     // 2) namespace 전체를 using 선언
     EnglishScore();
 
-    // * math의 CommInfo는 using 함수 사용 X & english는 namespace 전체 using 선언
-    // Commoninfo()   -> Error 발생 : english 에서 자동으로 호출되지 않음
+    // * korean의 english는 namespace 전체 using 선언
+    // Commoninfo() -> Error 발생 : 자동으로 선택되어 호출되지 않음
+    
+    // CommonInfo();
 }
+
+
+
+
