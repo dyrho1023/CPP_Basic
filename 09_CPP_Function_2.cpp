@@ -8,6 +8,8 @@ using namespace std;
    1) 함수 인자의 갯수가 다르거나
    2) 함수 인자의 타입이 다른 경우
    * 함수의 반환 형태만 다르고 나머지가 전부 동일한 경우는 함수 오버로딩이 아님
+   * C++ 에서 함수의 심볼을 결정하는 방식이 C와 다르기 때문에 가능한 방법
+   * 인자가 모호하면 함수 호출에 모호성이 생겨 정상동작 하지 않음 -> 파라미터 기본값과 사용시 주의 요망
 */ 
 
 // Standard Function
@@ -25,7 +27,7 @@ int Summation(int math, int english, int korean)
 }
 
 // 2) 함수 인자의 타입이 다른 경우
-int Summation(double math, double english)
+double Summation(double math, double english)
 {
     cout << "Case 2" << endl;
     cout << math + english << endl;
